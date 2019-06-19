@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+
+
+{% block content %}
+
+<p>Welcome to Patch Reminder,&nbsp&nbsp<strong>{%if user.is_authenticated%}{{user.username}}
+{% else %}visitor{% endif %}!</strong></p>
+{%if user.is_authenticated%}
+<a href="{% url 'products' %}">Subscribe to products</a> &nbsp &nbsp
+<a href="{% url 'subscriptions' %}">Your Subscriptions</a>&nbsp &nbsp
+{% endif %}
+<a href="{% url 'CVE' %}">Get CVE of any product</a>
+{%endblock%}
+

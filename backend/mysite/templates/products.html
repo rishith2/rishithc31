@@ -1,0 +1,30 @@
+
+
+
+{%extends 'base.html'%}
+
+{% block content %}
+
+	<form method="POST">
+	<div style="margin:5%">
+	<table>
+		<th><td>Name</td></th>
+	
+	{% for i in products %}
+	<tr>
+		<td>
+  <input type="checkbox" name="product[]" value="{{i}}">{{i}}<br>
+  </td>
+	</tr>
+	
+	{% endfor %}
+	
+
+	</table>
+	{% csrf_token %}
+	<br><br>
+	<input type="submit" value="Subscribe">
+	</div>
+</form>
+{%endblock%}
+
